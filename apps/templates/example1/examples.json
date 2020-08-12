@@ -1,0 +1,36 @@
+[
+    {
+        "id": "Data 1",
+        "values": {
+            "headline": "MJML",
+            "links": [
+                {
+                    "label": "Home"
+                },
+                {
+                    "label": "Features"
+                },
+                {
+                    "label": "Portfolio"
+                }
+            ]
+        }
+    },
+    {
+        "id": "Data 2",
+        "values": {
+            "headline": "MJML 2.0",
+            "links": [
+                {
+                    "label": "Foo"
+                },
+                {
+                    "label": "Bar"
+                },
+                {
+                    "label": "Baz"
+                }
+            ]
+        }
+    }
+]
