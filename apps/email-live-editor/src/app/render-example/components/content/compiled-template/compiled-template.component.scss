@@ -15,8 +15,9 @@
 .showcase {
     display: block;
     margin: 0 40px 40px 40px;
-    border: 1px solid grey;
+    border: 2px solid grey;
     border-radius: 8px;
+    overflow: hidden;
 }
 
 .showcase-sm {
