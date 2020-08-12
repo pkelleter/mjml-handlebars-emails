@@ -1,0 +1,192 @@
+{
+    "version": 1,
+    "projects": {
+        "email-live-editor": {
+            "projectType": "application",
+            "schematics": {
+                "@schematics/angular:component": {
+                    "style": "scss"
+                }
+            },
+            "root": "apps/email-live-editor",
+            "sourceRoot": "apps/email-live-editor/src",
+            "prefix": "emails",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/apps/email-live-editor",
+                        "index": "apps/email-live-editor/src/index.html",
+                        "main": "apps/email-live-editor/src/main.ts",
+                        "polyfills": "apps/email-live-editor/src/polyfills.ts",
+                        "tsConfig": "apps/email-live-editor/tsconfig.app.json",
+                        "aot": true,
+                        "assets": [
+                            "apps/email-live-editor/src/favicon.ico",
+                            "apps/email-live-editor/src/assets"
+                        ],
+                        "styles": [
+                            "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+                            "apps/email-live-editor/src/styles/styles.scss"
+                        ],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/email-live-editor/src/environments/environment.ts",
+                                    "with": "apps/email-live-editor/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "6kb",
+                                    "maximumError": "10kb"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "email-live-editor:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "email-live-editor:build:production"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "email-live-editor:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/email-live-editor/tsconfig.app.json",
+                            "apps/email-live-editor/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!apps/email-live-editor/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "apps/email-live-editor/jest.config.js",
+                        "tsConfig": "apps/email-live-editor/tsconfig.spec.json",
+                        "passWithNoTests": true,
+                        "setupFile": "apps/email-live-editor/src/test-setup.ts"
+                    }
+                }
+            }
+        },
+        "email-templating-api": {
+            "root": "apps/email-templating-api",
+            "sourceRoot": "apps/email-templating-api/src",
+            "projectType": "application",
+            "prefix": "email-templating-api",
+            "schematics": {
+                "@nestjs/schematics:controller": {
+                    "sourceRoot": ""
+                },
+                "@nestjs/schematics:service": {
+                    "sourceRoot": ""
+                }
+            },
+            "architect": {
+                "build": {
+                    "builder": "@nrwl/node:build",
+                    "options": {
+                        "outputPath": "dist/apps/email-templating-api",
+                        "main": "apps/email-templating-api/src/main.ts",
+                        "tsConfig": "apps/email-templating-api/tsconfig.app.json",
+                        "assets": [
+                            "apps/email-templating-api/src/assets",
+                            {
+                                "glob": "**/*",
+                                "input": "./apps/templates/",
+                                "output": "./assets/templates"
+                            }
+                        ]
+                    },
+                    "configurations": {
+                        "production": {
+                            "optimization": true,
+                            "extractLicenses": true,
+                            "inspect": false,
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/email-templating-api/src/environments/environment.ts",
+                                    "with": "apps/email-templating-api/src/environments/environment.prod.ts"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@nrwl/node:execute",
+                    "options": {
+                        "buildTarget": "email-templating-api:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/email-templating-api/tsconfig.app.json",
+                            "apps/email-templating-api/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!apps/email-templating-api/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "apps/email-templating-api/jest.config.js",
+                        "tsConfig": "apps/email-templating-api/tsconfig.spec.json",
+                        "passWithNoTests": true
+                    }
+                }
+            }
+        }
+    },
+    "cli": {
+        "defaultCollection": "@nrwl/angular"
+    },
+    "schematics": {
+        "@nrwl/angular:application": {
+            "unitTestRunner": "jest",
+            "e2eTestRunner": "cypress"
+        },
+        "@nrwl/angular:library": {
+            "unitTestRunner": "jest"
+        }
+    },
+    "defaultProject": "email-live-editor"
+}

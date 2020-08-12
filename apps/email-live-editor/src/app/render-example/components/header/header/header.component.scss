@@ -1,0 +1,18 @@
+@import "../../../../../styles/variables";
+
+:host {
+    display: flex;
+}
+
+.sidebar {
+    flex-basis: $sidebar-width;
+}
+
+.title {
+    flex: 1;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    align-self: center;
+    text-shadow: 3px 3px black;
+}

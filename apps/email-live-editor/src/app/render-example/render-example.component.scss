@@ -1,0 +1,28 @@
+@import "../../styles/colors";
+@import "../../styles/variables";
+
+:host {
+    display: grid;
+    grid-template-columns: $sidebar-width 1fr;
+    grid-template-rows: $header-height 1fr;
+    grid-template-areas:
+    "header header"
+    "sidebar content";
+}
+
+.header {
+    grid-area: header;
+    background: $ci-color-san-marino;
+    box-shadow: black 1px 1px 4px 2px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background: $ci-color-san-marino;
+    min-height: calc(100vh - #{$header-height});
+    box-shadow: black 1px 4px 4px 2px;
+}
+
+.content {
+    grid-area: content;
+}

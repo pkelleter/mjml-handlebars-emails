@@ -1,0 +1,37 @@
+[
+    {
+        "id": "Example 1",
+        "values": {
+            "techStack": [
+                {
+                    "name": "Node"
+                },
+                {
+                    "name": "Handlebars"
+                },
+                {
+                    "name": "MJML"
+                },
+                {
+                    "name": "Angular"
+                }
+            ]
+        }
+    },
+    {
+        "id": "Example 2",
+        "values": {
+            "techStack": [
+                {
+                    "name": "A"
+                },
+                {
+                    "name": "B"
+                },
+                {
+                    "name": "D"
+                }
+            ]
+        }
+    }
+]

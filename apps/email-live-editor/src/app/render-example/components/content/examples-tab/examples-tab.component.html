@@ -1,0 +1,4 @@
+<mat-tab-group (selectedTabChange)="selectExampleById($event)">
+    <mat-tab *ngFor="let exampleId of exampleIds$ | async"
+             label="{{exampleId}}"></mat-tab>
+</mat-tab-group>

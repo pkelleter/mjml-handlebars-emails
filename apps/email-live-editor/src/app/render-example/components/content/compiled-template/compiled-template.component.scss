@@ -1,0 +1,35 @@
+:host {
+    display: block;
+}
+
+.title {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 20px 0 20px 40px;
+}
+
+.default-views {
+    display: flex;
+}
+
+.showcase {
+    display: block;
+    margin: 0 40px 40px 40px;
+    border: 1px solid grey;
+    border-radius: 8px;
+}
+
+.showcase-sm {
+    @extend .showcase;
+    width: 320px;
+}
+
+.showcase-md {
+    @extend .showcase;
+    width: 480px;
+}
+
+.showcase-lg {
+    @extend .showcase;
+    width: 600px;
+}

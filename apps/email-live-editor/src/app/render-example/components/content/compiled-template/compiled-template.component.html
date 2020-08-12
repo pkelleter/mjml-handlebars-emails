@@ -1,0 +1,18 @@
+<div class="default-views">
+    <div class="device">
+        <div class="title">Desktop</div>
+        <div class="showcase-lg"><span [innerHTML]="compiledTemplate$ | async"></span></div>
+    </div>
+    <div class="device">
+        <div class="title">Mobile Horizontal</div>
+        <div class="showcase-md"><span [innerHTML]="compiledTemplate$ | async"></span></div>
+    </div>
+    <div class="device">
+        <div class="title">Mobile Vertical</div>
+        <div class="showcase-sm"><span [innerHTML]="compiledTemplate$ | async"></span></div>
+    </div>
+</div>
+<div class="custom-view">
+    <div class="title">Custom Size (Not yet implemented)</div>
+    <div class="showcase"><span [innerHTML]="compiledTemplate$ | async"></span></div>
+</div>
