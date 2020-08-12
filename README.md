@@ -1,3 +1,7 @@
+# Preview
+
+![Preview not found](![alt text](https://github.com/pkelleter/mjml-handlebars-emails/blob/master/example.jpg?raw=true))
+
 # Development
 run `npm run serve-dev` to serve live-edit client on port 5200 and emails api on port 5201.
 Now you can edit the email templates in the `./apps/email-templating-api/src/assets/templates/` directory and see immediate impact in your client.
