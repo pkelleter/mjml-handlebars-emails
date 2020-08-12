@@ -18,19 +18,11 @@
     border: 2px solid grey;
     border-radius: 8px;
     overflow: hidden;
+    height: 720px;
 }
 
-.showcase-sm {
-    @extend .showcase;
-    width: 320px;
-}
-
-.showcase-md {
-    @extend .showcase;
-    width: 480px;
-}
-
-.showcase-lg {
-    @extend .showcase;
-    width: 600px;
+.iframe {
+    border: 0;
+    width: 100%;
+    height: 100%;
 }

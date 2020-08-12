@@ -1,15 +1,11 @@
 <div class="default-views">
-    <div class="device">
-        <div class="title">Desktop</div>
-        <div class="showcase-lg"><span [innerHTML]="compiledTemplate$ | async"></span></div>
-    </div>
-    <div class="device">
-        <div class="title">Mobile Horizontal</div>
-        <div class="showcase-md"><span [innerHTML]="compiledTemplate$ | async"></span></div>
-    </div>
-    <div class="device">
-        <div class="title">Mobile Vertical</div>
-        <div class="showcase-sm"><span [innerHTML]="compiledTemplate$ | async"></span></div>
+    <div *ngFor="let showcase of showcases"
+         class="device">
+        <div class="title">{{showcase.title}}</div>
+        <div [style.width]="showcase.width"
+             class="showcase">
+            <iframe [id]="showcase.id"
+                    class="iframe"></iframe>
+        </div>
     </div>
 </div>
-
